@@ -8,9 +8,9 @@ int numStr1 = Convert.ToInt32(Console.ReadLine());
 
 if (numStr1 % 2 == 0)
 {
-    Console.WriteLine($"да");
+    Console.WriteLine($"да делится на 2");
 }
 else
 {
-    Console.WriteLine($"нет");
+    Console.WriteLine($"нет не делится на 2");
 }
