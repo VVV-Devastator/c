@@ -9,24 +9,23 @@
 // 1, 2 -> 2
 
 
-Console.WriteLine("Введите координаты точки в матрице, столбец:");
-int m1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координаты точки в матрице, строка:");
-int n1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координаты точки в 4х  матрице, столбец (столбцы считаются с 1 до 4):");
+int col = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координаты точки в 4х  матрице, строка (строки считаются с 1 до 4):");
+int row = Convert.ToInt32(Console.ReadLine());
 int m = 4;
 int n = 4;
-int row = 1;
-int col = 2;
+
 int[,] array = CreateRandomArray(m, n);
 // *****************************************************
 
-if (n1 > n || m1 > m) 
+if (col-1 >= n || row-1 >= m || col-1 < 0 || row-1 < 0)  
 {
     Console.WriteLine("Такого элемента в массиве нет.");
 }
 else
 {
-    int value = GetValueFromArray(array, row, col);
+    int value = array[row-1, col-1];
     Console.WriteLine("Значение элемента: " + value);
     Console.WriteLine("Массив: ");
     PrintArray(array);
@@ -50,11 +49,6 @@ int[,] CreateRandomArray(int m, int n)
         return array;
     } 
 
-
-int GetValueFromArray(int[,] array, int row, int col)
-    {   
-        return array[row, col];
-    }
 
 
 void PrintArray(int[,] array)
